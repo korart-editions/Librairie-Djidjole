@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Librairie Djidjolé</title>
+<meta name="robots" content="index,follow">
+<script>
+(async function(){
+  try {
+    const response = await fetch('../index.html', {cache:'no-store'});
+    if (!response.ok) throw new Error('Impossible de charger la page principale (' + response.status + ')');
+    let html = await response.text();
+    // Base URL rooted at the GitHub Pages project directory, so all relative assets remain intact.
+    const baseTag = '<base href="../">';
+    html = html.replace(/<head([^>]*)>/i, match => match + '\n' + baseTag);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch (error) {
+    document.open();
+    document.write('<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chargement impossible</title><body style="font-family:Arial,sans-serif;padding:2rem"><h1>La page n’a pas pu être chargée</h1><p>Recharge cette page. Si le problème persiste, vérifie que le fichier index.html principal est présent à la racine du dépôt.</p><p><a href="../">Retour à l’accueil</a></p></body></html>');
+    document.close();
+  }
+})();
+</script>
+</head>
+<body><p>Chargement de la rubrique…</p></body>
+</html>

@@ -1,0 +1,9 @@
+VERSION EXPERIMENTALE — NAVIGATION PAR URL CLASSIQUES
+
+Cette version évite de dupliquer le gros HTML de 16 Mo dans chaque rubrique.
+- index.html : page complète, seule copie du site.
+- rayons/index.html, photos/index.html, contact/index.html : petits chargeurs qui récupèrent la page principale et laissent l’URL de la rubrique dans la barre d’adresse.
+
+Important : déployer tous les fichiers en conservant exactement les dossiers. Le dépôt ne contient qu’une copie complète du site afin de rester sous la limite de téléversement de GitHub.
+
+Cette version est expérimentale. Vérifier le site après publication dans le nouveau dépôt avant toute utilisation. Le site de production de la Librairie Djidjolé n’est pas modifié.
